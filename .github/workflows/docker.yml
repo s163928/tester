@@ -21,9 +21,8 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
       -
-        name: Build the Docker image
-        uses: actions/checkout@v2
-        run: |
-          echo docker build . --file Dockerfile \
-            --tag docker.io/$/$:$GITHUB_SHA
-          docker push docker.io/$/$:$GITHUB_SHA
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: user/app:latest
