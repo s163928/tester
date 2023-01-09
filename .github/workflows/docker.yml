@@ -25,6 +25,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          working_directory: .
           file: Dockerfile
           push: true
           tags: user/app:latest
