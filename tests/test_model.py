@@ -7,5 +7,3 @@ def test_model():
     tester = torch.randn(64, 784)
     print(tester.shape)
     model(tester)
-
-        
